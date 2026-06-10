@@ -1,0 +1,4 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_development_area,access.development.area,model_development_area,,1,1,1,1
+access_programming_language,access.programming.language,model_programming_language,,1,1,1,1
+access_key_framework,access.key.framework,model_key_framework,,1,1,1,1

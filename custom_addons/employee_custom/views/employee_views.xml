@@ -1,0 +1,40 @@
+<odoo>
+    <record id="employee_from_custom" model="ir.ui.view">
+        <field name="name">hr.employee.form.custom</field>
+        <field name="model">hr.employee</field>
+        <field name="inherit_id" ref="hr.view_employee_form" />
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='mobile_phone']/.." position="replace"/>
+            <xpath expr="//field[@name='category_ids']/.." position="replace"/>
+            <xpath expr="//field[@name='department_id']" position="replace"/>
+            <xpath expr="//field[@name='job_title']" position="replace"/>
+            <xpath expr="//field[@name='parent_id']" position="replace"/>
+            <xpath expr="//field[@name='work_phone']" position="attributes">
+                <attribute name="string">Phone</attribute>
+                <attribute name="placeholder">Phone</attribute>
+            </xpath>
+            <xpath expr="//field[@name='job_id']" position="after">
+                <field name="development_area_id" widget="many2many_tags" placeholder="Not date"/>
+            </xpath>
+            <xpath expr="//field[@name='job_id']" position="replace"/>
+            <xpath expr="//field[@name='development_area_id']" position="after">
+                <field name="key_development_area_id" widget="many2many_tags" placeholder="Not date"/>
+            </xpath>
+            <xpath expr="//field[@name='key_development_area_id']" position="after">
+                <field name="programming_language_id" widget="many2many_tags" placeholder="Not date"/>
+            </xpath>
+            <xpath expr="//field[@name='programming_language_id']" position="after">
+                <field name="key_programming_language_id" widget="many2many_tags" placeholder="Not date"/>
+            </xpath>
+            <xpath expr="//field[@name='key_programming_language_id']" position="after">
+                <field name="key_framework" widget="many2many_tags" placeholder="Not date"/>
+            </xpath>
+            <xpath expr="//field[@name='key_framework']" position="after">
+                <field name="start_work_time" widget="float_time"/>
+            </xpath>
+            <xpath expr="//field[@name='start_work_time']" position="after">
+                <field name="end_work_time" widget="float_time"/>
+            </xpath>
+        </field>
+    </record>
+</odoo>

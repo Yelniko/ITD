@@ -1,0 +1,34 @@
+<odoo>
+    <record id="programming_language_view_form" model="ir.ui.view">
+        <field name="name">programming.language.form</field>
+        <field name="model">programming.language</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <field name="name"/>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="programming_language_viem_list" model="ir.ui.view">
+        <field name="name">programming.language.list</field>
+        <field name="model">programming.language</field>
+        <field name="arch" type="xml">
+            <list editable="bottom">
+                <field name="name"/>
+            </list>
+        </field>
+    </record>
+
+    <record id="action_programming_language" model="ir.actions.act_window">
+        <field name="name">Programming language</field>
+        <field name="res_model">programming.language</field>
+        <field name="view_mode">list,form</field>
+    </record>
+
+    <menuitem id="menu_programming_language"
+              name="Programming language"
+              action="action_programming_language"
+              parent="hr.menu_hr_root"/>
+</odoo>
