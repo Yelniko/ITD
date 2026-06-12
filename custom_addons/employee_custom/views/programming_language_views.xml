@@ -30,5 +30,6 @@
     <menuitem id="menu_programming_language"
               name="Programming language"
               action="action_programming_language"
-              parent="hr.menu_hr_root"/>
+              parent="hr.hr_menu_configuration"
+              sequence="131"/>
 </odoo>

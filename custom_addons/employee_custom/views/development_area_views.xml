@@ -30,5 +30,5 @@
     <menuitem id="menu_development_area"
               name="Development area"
               action="action_development_area"
-              parent="hr.menu_hr_root"/>
+              parent="hr.hr_menu_configuration"/>
 </odoo>

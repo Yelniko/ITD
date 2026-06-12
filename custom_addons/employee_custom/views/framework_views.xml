@@ -30,5 +30,5 @@
     <menuitem id="menu_key_framework"
               name="Key framework"
               action="action_key_framework"
-              parent="hr.menu_hr_root"/>
+              parent="hr.hr_menu_configuration"/>
 </odoo>
