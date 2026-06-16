@@ -1,5 +1,0 @@
-from odoo:19.0
-user root
-copy requirements.txt
-run pip install --on-cache-dir -r requirements.txt
-user odoo

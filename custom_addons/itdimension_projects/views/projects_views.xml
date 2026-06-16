@@ -30,8 +30,13 @@
     <menuitem id="menu_projects_root"
               name = "Projects"/>
 
+    <menuitem id="menu_projects_configuration"
+              name="Configuration"
+              parent="menu_projects_root"
+              sequence="100"/>
+
     <menuitem id="menu_project_list"
               name="Project list"
               action="action_project_list"
-              parent="menu_projects_root"/>
+              parent="menu_projects_configuration"/>
 </odoo>

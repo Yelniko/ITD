@@ -1,0 +1,13 @@
+<odoo noupdate="1">
+    <record id="ir_cron_daily_reports" model="ir.cron">
+        <field name="name">Daily Reports</field>
+        <field name="model_id" ref="model_daily_report_generator"/>
+        <field name="state">code</field>
+        <field name="code">model.generate_daily_reports()</field>
+
+        <field name="interval_number">1</field>
+        <field name="interval_type">days</field>
+
+        <field name="nextcall">2026-06-17 08:00:00</field>
+    </record>
+</odoo>

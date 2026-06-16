@@ -1,5 +1,5 @@
 {
-    'name': 'Employee Custom',
+    'name': 'IT-Dimension Employee Custom',
     'version': '1.0',
     'author': '',
     'category': 'Custom/HR',
