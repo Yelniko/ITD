@@ -1,0 +1,57 @@
+<odoo>
+    <data noupdate="1">
+        <record id="config_service_account_file" model="ir.config_parameter">
+            <field name="key">migration.service_account_file</field>
+            <field name="value">CHANGE_ME</field>
+        </record>
+
+        <record id="config_spreadsheet_employees_id" model="ir.config_parameter">
+            <field name="key">migration.spreadsheet_employees_id</field>
+            <field name="value">CHANGE_ME</field>
+        </record>
+        <record id="config_spreadsheet_birthdays_id" model="ir.config_parameter">
+            <field name="key">migration.spreadsheet_birthdays_id</field>
+            <field name="value">CHANGE_ME</field>
+        </record>
+        <record id="config_spreadsheet_working_hours_id" model="ir.config_parameter">
+            <field name="key">migration.spreadsheet_working_hours_id</field>
+            <field name="value">CHANGE_ME</field>
+        </record>
+        <record id="config_spreadsheet_projects_id" model="ir.config_parameter">
+            <field name="key">migration.projects_id</field>
+            <field name="value">CHANGE_ME</field>
+        </record>
+        <record id="config_spreadsheet_reports_id" model="ir.config_parameter">
+            <field name="key">migration.spreadsheet_reports_id</field>
+            <field name="value">CHANGE_ME</field>
+        </record>
+        <record id="config_spreadsheet_employees_sheet" model="ir.config_parameter">
+            <field name="key">migration.spreadsheet_employees_sheet</field>
+            <field name="value">employees_list</field>
+        </record>
+         <record id="config_spreadsheet_birthdays_sheet" model="ir.config_parameter">
+            <field name="key">migration.spreadsheet_birthdays_sheet</field>
+            <field name="value">Employee birthdays</field>
+        </record>
+        <record id="config_spreadsheet_working_hours_sheet" model="ir.config_parameter">
+            <field name="key">migration.spreadsheet_working_hours_sheet</field>
+            <field name="value">Developers and working hours</field>
+        </record>
+        <record id="config_spreadsheet_projects_sheet" model="ir.config_parameter">
+            <field name="key">migration.spreadsheet_projects_sheet</field>
+            <field name="value">Developers and projects</field>
+        </record>
+        <record id="config_status_map" model="ir.config_parameter">
+            <field name="key">migration.status_map</field>
+            <field name="value">{"Работает": "available", "Не работает": "unavailable", "В отпуске": "on_vacation", "Завершил Проект": "project_completed"}</field>
+        </record>
+        <record id="config_status_map_report" model="ir.config_parameter">
+            <field name="key">migration.status_map_report</field>
+            <field name="value">{"In progress": "in_progress", "Done": "done", "-": "not_info", "": "not_info"}</field>
+        </record>
+        <record id="config_scopes" model="ir.config_parameter">
+            <field name="key">migration.scopes</field>
+            <field name="value">https://www.googleapis.com/auth/spreadsheets.readonly</field>
+        </record>
+    </data>
+</odoo>

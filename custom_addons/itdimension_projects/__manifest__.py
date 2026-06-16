@@ -1,5 +1,5 @@
 {
-    'name': 'ITD Project',
+    'name': 'IT-Dimension Project',
     'version': '1.0',
     'author': '',
     'category': 'Custom/HR',
