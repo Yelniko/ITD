@@ -81,12 +81,3 @@ class DailyReport(models.Model):
                 mail_vals['scheduled_date'] = scheduled_date
             self.env['mail.mail'].create(mail_vals)
 
-    def test(self):
-        emp = self.env['hr.employee'].search([('work_email', '=', 'xoleg2006x@gmail.com')], limit=1)
-        html = self._build_report_html(emp)
-        mail = self.env['mail.mail'].create({
-            'subject': f'Time Report for Test',
-            'email_to': 'xoleg2006x@gmail.com',
-            'body_html': html,
-        })
-        mail.send(raise_exception=True)
