@@ -33,7 +33,9 @@
             <search>
                 <field name="name_project" string="Project"/>
                 <field name="name_developer" string="Developer"/>
+                <filter string="Date" name="filter_date" date="date"/>
 
+                <separator/>
                 <filter string="Group by Project"
                         name="group_project"
                         context="{'group_by': 'name_project'}"/>
