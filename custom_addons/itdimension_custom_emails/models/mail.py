@@ -1,11 +1,52 @@
+import pytz
 from odoo import models, fields
-from datetime import datetime
+from datetime import datetime, timedelta
 
 class DailyReport(models.Model):
     _name = 'daily.report.generator'
 
     def _build_report_html(self, employee):
-        pass
+        projects = self.env['project.development'].search([('name_developer', '=', employee.id)])
+
+        html = """
+            <html>
+            <head></head>
+            <body style="margin: 0; padding: 0;">
+            <div style="font-family: Roboto, Arial, Helvetica, sans-serif; font-size: 13px; color: #333333;">
+            <div style="color: #4472c4; font-weight: bold; font-size: 15px; margin-bottom: 20px;">
+                Status: 0 – in process, 0 – done.
+            </div>
+            """
+
+        for project in projects:
+            if not project.status == 'available':
+                continue
+
+            html += f"""
+                <h2 style="color: #4472c4; margin-top: 20px; margin-bottom: 10px; font-size: 20px;">
+                Project: {project.name_project.name}
+                </h2>
+                <table width="100%" cellpadding="6" cellspacing="0" style="border-collapse: collapse; border: none; margin-bottom: 30px;">
+                    <tr style="background-color: #4472c4; color: #ffffff; text-align: left;">
+                        <th style="border: 1px solid #ffffff; font-weight: bold;">Task</th>
+                        <th style="border: 1px solid #ffffff; font-weight: bold; width: 15%;">Time (hh:mm)</th>
+                        <th style="border: 1px solid #ffffff; font-weight: bold; width: 10%;">Status</th>
+                    </tr>
+                """
+
+            for i in range(4):
+                bg_color = "#e9edf4" if i % 2 == 0 else "#ffffff"
+                html += (f'<tr style="background-color: {bg_color};">'
+                         f'<td style="border: 1px solid #ffffff; font-weight: bold;"> </td>'
+                         f'<td style="border: 1px solid #ffffff; font-weight: bold;"> </td>'
+                         f'<td style="border: 1px solid #ffffff; font-weight: bold;"> </td>'
+                         f'</tr>')
+
+            html += '</table>'
+
+        html += '</body></html>'
+
+        return html
 
     def _compute_scheduled_date(self, employee):
         if not employee.end_work_time:

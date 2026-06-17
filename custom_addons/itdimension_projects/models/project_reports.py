@@ -12,3 +12,5 @@ class ProjectReport(models.Model):
     status = fields.Selection([('not_info', '-'), ('done', 'Done'),
                                ('in_progress', 'In Progress'),],
                               string="Status", default='not_info')
+    
+    
