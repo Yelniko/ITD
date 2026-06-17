@@ -21,6 +21,7 @@ def employee_migration(env):
 
     em = []
     tw = {}
+    db = {}
 
     for i in range(1, len(rows_tw)):
         if len(rows_tw[i]) == 2:
@@ -35,6 +36,9 @@ def employee_migration(env):
         for j in range(len(rows_em[0])):
             lis[rows_em[0][j]] = rows_em[i][j]
         em.append(lis)
+
+    for i in rows_db[1:]:
+        db[i[0]] = i[1]
 
     for row in em:
         print(row['Email'], end=' - ')
@@ -55,7 +59,9 @@ def employee_migration(env):
             "key_framework":               many2many_ids(env,"key.framework",        row['Key frameworks']),
 
             "start_work_time": time_to_float(row['Time'][0]),
-            "end_work_time":   time_to_float(row['Time'][1])
+            "end_work_time":   time_to_float(row['Time'][1]),
+
+            "birthday": convert_date(db.get(row['Full name'], ''))
         }
 
         existing = env['hr.employee'].search([('name', '=', row['Full name'])], limit=1)

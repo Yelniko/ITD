@@ -80,4 +80,3 @@ class DailyReport(models.Model):
             if scheduled_date:
                 mail_vals['scheduled_date'] = scheduled_date
             self.env['mail.mail'].create(mail_vals)
-
