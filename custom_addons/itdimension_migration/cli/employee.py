@@ -38,7 +38,7 @@ def employee_migration(env):
         em.append(lis)
 
     for i in rows_db[1:]:
-        db[i[0]] = i[1]
+        db[i[3]] = i[1]
 
     for row in em:
         print(row['Email'], end=' - ')
